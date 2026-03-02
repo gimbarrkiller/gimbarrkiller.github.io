@@ -8,23 +8,25 @@ const Hero = () => {
 
   return (
     <section className="hero">
-      <div className="hero-content">
-        <div className="hero-text">
-          <h1>Профессиональный ремонт автомобилей в Казани</h1>
-          <p>
-            Качественное техническое обслуживание, ремонт и покраска автомобилей.
-            Работаем с отечественными, корейскими и европейскими марками.
-          </p>
-          <button onClick={scrollToApplication} className="cta-button">
-            Записаться на ремонт
-          </button>
-        </div>
+      <div className="container">
+        <div className="hero-content">
+          <div className="hero-text">
+            <h1>Профессиональный ремонт автомобилей в Казани</h1>
+            <p>
+              Качественное техническое обслуживание, ремонт и покраска автомобилей.
+              Работаем с отечественными, корейскими и европейскими марками.
+            </p>
+            <button onClick={scrollToApplication} className="cta-button">
+              Записаться на ремонт
+            </button>
+          </div>
 
-        <div className="hero-image">
-          <img
-            src="https://via.placeholder.com/800x400?text=AM+Motors"
-            alt="Автосервис AM Motors"
-          />
+          <div className="hero-image">
+            <img
+              src="https://via.placeholder.com/800x400?text=AM+Motors"
+              alt="Автосервис AM Motors"
+            />
+          </div>
         </div>
       </div>
     </section>

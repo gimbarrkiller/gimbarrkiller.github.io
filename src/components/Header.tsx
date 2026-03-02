@@ -6,18 +6,21 @@ const Header = () => {
 
   useEffect(() => {
     let ticking = false;
-
     const handleScroll = () => {
       if (!ticking) {
-        requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
           const scrollPosition = window.scrollY;
 
-          // Используем гистерезис для предотвращения дрожания
-          if (!isScrolled && scrollPosition > 150) {
-            setIsScrolled(true);
-          } else if (isScrolled && scrollPosition < 80) {
-            setIsScrolled(false);
-          }
+          // Используем prev — это всегда актуальное значение isScrolled
+          setIsScrolled((prev) => {
+            if (!prev && scrollPosition > 150) {
+              return true; // Скролл вниз
+            }
+            if (prev && scrollPosition < 149) {
+              return false; // Возврат наверх
+            }
+            return prev; // Состояние не меняется
+          });
 
           ticking = false;
         });
@@ -27,7 +30,7 @@ const Header = () => {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isScrolled]);
+  }, []); // Массив пустой — эффект не перезапускается
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -51,29 +54,26 @@ const Header = () => {
               <span>Автосервис в Казани</span>
             </div>
 
-            <div className="contacts">
-              <div className="contact-item">
-                <span>📞</span>
-                <div>
-                  <a href="tel:+78432567890">+7 (843) 256-78-90</a>
-                  <a href="tel:+79273456789">+7 (927) 345-67-89</a>
-                </div>
-              </div>
+            <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
 
-              <div className="contact-item">
-                <span>📍</span>
-                <div>г. Казань, ТЦ Кольцо</div>
-              </div>
-
-              <div className="social-links">
-                <a href="https://t.me/ammotors" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <span>📱</span> Telegram
-                </a>
-                <a href="https://wa.me/79273456789" target="_blank" rel="noopener noreferrer" className="social-link">
-                  <span>💬</span> WhatsApp
-                </a>
-              </div>
-            </div>
+            <nav className={`navigation ${isMobileMenuOpen ? 'navigation-open' : ''}`}>
+              <button onClick={() => scrollToSection('services')} className="nav-link">
+                Услуги
+              </button>
+              <button onClick={() => scrollToSection('brands')} className="nav-link">
+                Марки авто
+              </button>
+              {/* <button onClick={() => scrollToSection('application')} className="nav-link"> */}
+              {/*  Оставить заявку */}
+              {/* </button> */}
+              <button onClick={() => scrollToSection('location')} className="nav-link">
+                Контакты
+              </button>
+            </nav>
           </div>
         )}
 
@@ -84,26 +84,53 @@ const Header = () => {
             </div>
           )}
 
-          <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+          {!isScrolled ? (
+            <div className="contacts only-pc">
+              <div className="contact-item">
+                <span>📞</span>
+                <div>
+                  <a href="tel:+79274614916">+7 (927) 461-49-16</a>
+                </div>
+              </div>
 
-          <nav className={`navigation ${isMobileMenuOpen ? 'navigation-open' : ''}`}>
-            <button onClick={() => scrollToSection('services')} className="nav-link">
-              Услуги
-            </button>
-            <button onClick={() => scrollToSection('brands')} className="nav-link">
-              Марки авто
-            </button>
-            <button onClick={() => scrollToSection('application')} className="nav-link">
-              Оставить заявку
-            </button>
-            <button onClick={() => scrollToSection('location')} className="nav-link">
-              Контакты
-            </button>
-          </nav>
+              <div className="contact-item">
+                <span>📍</span>
+                <div>г. Казань, ул. Волгоградская, 8, к1</div>
+              </div>
+
+              <div className="social-links">
+                <a href="https://t.me/ammotors" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <span>📱</span> Telegram
+                </a>
+                <a href="https://wa.me/79274614916" target="_blank" rel="noopener noreferrer" className="social-link">
+                  <span>💬</span> WhatsApp
+                </a>
+              </div>
+            </div>
+          ) : (
+            <>
+              <button className="mobile-menu-toggle" onClick={toggleMobileMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </button>
+
+              <nav className={`navigation ${isMobileMenuOpen ? 'navigation-open' : ''}`}>
+                <button onClick={() => scrollToSection('services')} className="nav-link">
+                  Услуги
+                </button>
+                <button onClick={() => scrollToSection('brands')} className="nav-link">
+                  Марки авто
+                </button>
+                {/* <button onClick={() => scrollToSection('application')} className="nav-link"> */}
+                {/*  Оставить заявку */}
+                {/* </button> */}
+                <button onClick={() => scrollToSection('location')} className="nav-link">
+                  Контакты
+                </button>
+              </nav>
+            </>
+          )}
         </div>
       </div>
     </header>

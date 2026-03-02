@@ -9,14 +9,13 @@ const Location = () => {
             <div className="contact-details">
               <div className="contact-item">
                 <h3>📍 Адрес</h3>
-                <p>г. Казань, ТЦ Кольцо<br/>ул. Примерная, д. 123</p>
+                <p>г. Казань<br/>ул. Волгоградская, 8, к1</p>
               </div>
 
               <div className="contact-item">
-                <h3>📞 Телефоны</h3>
+                <h3>📞 Телефон</h3>
                 <p>
-                  <a href="tel:+78432567890">+7 (843) 256-78-90</a><br/>
-                  <a href="tel:+79273456789">+7 (927) 345-67-89</a>
+                  <a href="tel:+79274614916">+7 (927) 461-49-16</a>
                 </p>
               </div>
 
@@ -24,8 +23,7 @@ const Location = () => {
                 <h3>🕒 Режим работы</h3>
                 <p>
                   Пн-Пт: 8:00 - 19:00<br/>
-                  Сб: 9:00 - 17:00<br/>
-                  Вс: выходной
+                  Сб: 9:00 - 17:00
                 </p>
               </div>
 
@@ -46,16 +44,12 @@ const Location = () => {
           <div className="map-container">
             <div className="map-placeholder">
               <iframe
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3Afb73b8c4b8b5a72e2b8c4b4f4b7b8c4&amp;source=constructor"
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A8670f387bf9375f25df8f947f065882b54a4e13c32b94a7986e7fc5c13c2c739&amp;source=constructor"
                 width="100%"
                 height="400"
                 frameBorder="0"
-                title="AM Motors на карте"
-              ></iframe>
-              <div className="map-overlay">
-                <p>🗺️ Карта с точным расположением</p>
-                <small>ТЦ Кольцо, Казань</small>
-              </div>
+                title="AM Motors"
+              />
             </div>
           </div>
         </div>
