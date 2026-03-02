@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Hero = () => {
   const scrollToApplication = () => {
     const element = document.getElementById('application');

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Location = () => {
   return (
     <section id="location" className="location">

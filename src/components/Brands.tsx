@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Brands = () => {
   const brands = [
     { name: 'Лада', logo: '🏃‍♂️', description: 'ВАЗ / Lada' },
