@@ -17,6 +17,7 @@ const Brands = () => {
     { name: 'Ford', logo: '🔷', description: 'Ford' }
   ];
 
+
   return (
     <section id="brands" className="brands">
       <div className="container">
