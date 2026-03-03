@@ -1,28 +1,30 @@
+import { pokraskaImg, remontImg, toImg, zakazImg } from '../assets/images';
+
 const Services = () => {
   const services = [
     {
       title: 'ТО и ремонт автомобилей',
       description: 'Полное техническое обслуживание и капитальный ремонт двигателя, трансмиссии, подвески',
       icon: '🔧',
-      image: 'https://images.unsplash.com/photo-1487754180451-c456f719a1fc?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: toImg,
     },
     {
       title: 'Мелкосрочный ремонт',
       description: 'Замена масла, фильтров, тормозных колодок, диагностика и устранение мелких неисправностей',
       icon: '🛠️',
-      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: remontImg,
     },
     {
       title: 'Автозапчасти на заказ',
       description: 'Оригинальные и качественные аналоги запчастей для всех марок автомобилей с доставкой',
       icon: '📦',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: zakazImg
     },
     {
       title: 'Покрасочные работы',
       description: 'Полная и локальная покраска автомобиля, устранение царапин, антикоррозийная обработка',
       icon: '🎨',
-      image: 'https://images.unsplash.com/photo-1621905252472-e8592929c26c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+      image: pokraskaImg
     }
   ];
 
@@ -43,6 +45,16 @@ const Services = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="btn-container">
+          <a href="tel:+79274614916">
+            <button
+              // onClick={scrollToApplication}
+              className="cta-button"
+            >
+              Позвонить
+            </button>
+          </a>
         </div>
       </div>
     </section>

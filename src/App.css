@@ -33,6 +33,10 @@ body {
   margin: 0 auto;
   padding: 0 24px;
 }
+.btn-container {
+  margin-top: 28px;
+  text-align: center;
+}
 
 /* === HEADER === */
 .header {
@@ -371,9 +375,9 @@ body {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
   max-width: 1000px;
-  margin-left: auto;
+  margin: 0 auto 40px;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

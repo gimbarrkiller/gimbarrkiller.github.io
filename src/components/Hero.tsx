@@ -1,10 +1,12 @@
+import { mainImg } from '../assets/images';
+
 const Hero = () => {
-  const scrollToApplication = () => {
-    const element = document.getElementById('application');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const scrollToApplication = () => {
+  //   const element = document.getElementById('application');
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   return (
     <section className="hero">
@@ -16,14 +18,19 @@ const Hero = () => {
               Качественное техническое обслуживание, ремонт и покраска автомобилей.
               Работаем с отечественными, корейскими и европейскими марками.
             </p>
-            <button onClick={scrollToApplication} className="cta-button">
-              Записаться на ремонт
-            </button>
+            <a href="tel:+79274614916">
+              <button
+                // onClick={scrollToApplication}
+                className="cta-button"
+              >
+                Записаться на ремонт
+              </button>
+            </a>
           </div>
 
           <div className="hero-image">
             <img
-              src="https://via.placeholder.com/800x400?text=AM+Motors"
+              src={mainImg}
               alt="Автосервис AM Motors"
             />
           </div>
