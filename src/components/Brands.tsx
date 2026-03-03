@@ -1,20 +1,15 @@
+import { bmwImg, geelyImg, hyundaiImg, kiaImg, ladaImg, opelImg, skodaImg, vwImg } from '../assets/images';
+
 const Brands = () => {
   const brands = [
-    { name: 'Лада', logo: '🏃‍♂️', description: 'ВАЗ / Lada' },
-    { name: 'УАЗ', logo: '🚙', description: 'UAZ' },
-    { name: 'ГАЗ', logo: '🚐', description: 'GAZ' },
-    { name: 'Hyundai', logo: '🏢', description: 'Hyundai' },
-    { name: 'Kia', logo: '🎯', description: 'KIA' },
-    { name: 'Daewoo', logo: '⭐', description: 'Daewoo' },
-    { name: 'Volkswagen', logo: '🅥', description: 'VW' },
-    { name: 'Audi', logo: '🅰️', description: 'Audi' },
-    { name: 'Skoda', logo: '🏹', description: 'Škoda' },
-    { name: 'Toyota', logo: '🔴', description: 'Toyota' },
-    { name: 'Honda', logo: '🟢', description: 'Honda' },
-    { name: 'Nissan', logo: '⚫', description: 'Nissan' },
-    { name: 'BMW', logo: '🔵', description: 'BMW' },
-    { name: 'Mercedes', logo: '⭐', description: 'Mercedes-Benz' },
-    { name: 'Ford', logo: '🔷', description: 'Ford' }
+    { name: 'Лада', logo: ladaImg, description: 'ВАЗ / Lada' },
+    { name: 'Kia', logo: kiaImg, description: 'KIA' },
+    { name: 'Hyundai', logo: hyundaiImg, description: 'Hyundai' },
+    { name: 'Volkswagen', logo: vwImg, description: 'VW' },
+    { name: 'Skoda', logo: skodaImg, description: 'Škoda' },
+    { name: 'BMW', logo: bmwImg, description: 'BMW' },
+    { name: 'Opel', logo: opelImg, description: 'Opel' },
+    { name: 'Geely', logo: geelyImg, description: 'Geely' },
   ];
 
 
@@ -25,9 +20,11 @@ const Brands = () => {
         <p className="brands-subtitle">Мы работаем с широким спектром автомобильных марок</p>
 
         <div className="brands-grid">
-          {brands.map((brand, index) => (
-            <div key={index} className="brand-item">
-              <div className="brand-logo">{brand.logo}</div>
+          {brands.map((brand) => (
+            <div key={brand.name} className="brand-item">
+              <div className="brand-logo-container">
+                <img src={brand.logo} alt={brand.name} className="brand-logo-img" />
+              </div>
               <div className="brand-name">{brand.description}</div>
             </div>
           ))}
@@ -35,6 +32,17 @@ const Brands = () => {
 
         <div className="brands-note">
           <p>* Также работаем с другими европейскими и азиатскими марками</p>
+        </div>
+
+        <div className="btn-container">
+          <a href="tel:+79274614916">
+            <button
+              // onClick={scrollToApplication}
+              className="cta-button"
+            >
+              Узнать подробнее
+            </button>
+          </a>
         </div>
       </div>
     </section>

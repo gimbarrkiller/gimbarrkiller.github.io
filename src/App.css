@@ -88,7 +88,7 @@ body {
   align-items: center;
   gap: 10px;
   background: rgba(220, 53, 69, 0.1);
-  padding: 12px 20px;
+  padding: 8px 15px;
   border-radius: 8px;
   border: 1px solid transparent;
   transition: all 0.3s;
@@ -97,10 +97,6 @@ body {
 .header .contact-item:hover {
   border-color: var(--accent-red);
   background: rgba(220, 53, 69, 0.2);
-}
-
-.contact-item span {
-  font-size: 1.2rem;
 }
 
 .contact-item div {
@@ -434,7 +430,26 @@ body {
   color: var(--text-light-gray);
   font-style: italic;
 }
+.brand-logo-container {
+  height: 60px; /* Фиксированная высота для выравнивания */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
 
+.brand-logo-img {
+  max-width: 80px;
+  max-height: 50px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8); /* Делаем серыми в покое */
+  transition: all 0.3s ease;
+}
+
+.brand-item:hover .brand-logo-img {
+  filter: grayscale(0%) brightness(1); /* Цветные при наведении */
+  transform: scale(1.1);
+}
 /* === APPLICATION SECTION === */
 .application-section {
   background: var(--primary-dark);
