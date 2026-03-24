@@ -1,4 +1,4 @@
-import { pokraskaImg, remontImg, toImg, zakazImg } from '../assets/images';
+import { cleaningImg, detailingImg, remontImg, toImg, zakazImg } from '../assets/images';
 
 const Services = () => {
   const services = [
@@ -21,10 +21,16 @@ const Services = () => {
       image: zakazImg
     },
     {
-      title: 'Покрасочные работы',
-      description: 'Полная и локальная покраска автомобиля, устранение царапин, антикоррозийная обработка',
-      icon: '🎨',
-      image: pokraskaImg
+      title: 'Детейлинг',
+      description: 'Профессиональная полировка кузова, нанесение защитных покрытий и восстановление блеска лакокрасочного слоя',
+      icon: '✨',
+      image: detailingImg,
+    },
+    {
+      title: 'Химчистка',
+      description: 'Глубокая очистка салона, выведение пятен и гипоаллергенная обработка всех типов поверхностей',
+      icon: '🧼',
+      image: cleaningImg,
     }
   ];
 
